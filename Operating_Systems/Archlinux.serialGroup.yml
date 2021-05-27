@@ -1,0 +1,6 @@
+- name: adding existing user "{{ user }}" to group uucp
+  user:
+    name: "{{ user }}"
+    groups: uucp
+    append: yes
+  become: yes
