@@ -20,7 +20,7 @@
     include: Pros/Pros-cli.yml
 
   - name: Add user to serial group.
-    include: "{{ lookup('first_found', OperatingSystems) }}"
+    include: "{{ lookup('first_found', OperatingSystems, errors='warn') }}"
     vars:
       OperatingSystems:
         - Operating_Systems/{{ ansible_os_family }}.serialGroup.yml
