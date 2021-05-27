@@ -1,0 +1,5 @@
+- name: Adding upload bash alias
+  lineinfile:
+    path: /etc/bash.bashrc
+    line: alias upload='pros make; pros upload; pros v5 run'
+    create: yes

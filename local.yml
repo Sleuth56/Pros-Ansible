@@ -19,3 +19,6 @@
 
   - name: Install Pros-cli.
     include: Pros/Pros-cli.yml
+
+  - name: Adding upload bash alias
+    include: Pros/upload-alias.yml
