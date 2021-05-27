@@ -4,3 +4,5 @@
         - git
         - python
         - python-pip
+  become: true
+  remote_user: root

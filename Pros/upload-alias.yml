@@ -3,4 +3,6 @@
     path: /etc/bash.bashrc
     line: alias upload='pros mu --run-after'
     create: yes
+  become: true
+  remote_user: root
   when: upload is defined
