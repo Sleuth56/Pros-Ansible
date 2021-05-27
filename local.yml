@@ -17,7 +17,7 @@
           - "{{ ansible_os_family }}.yml"
 
           - "default.yml"
-        paths: "./Operating\ Systems/"
+        paths: "./Operatin_Systems/"
 
   # - name: Pros specific installation.
   #   include: Pros/Arm-tool-chain.yml
