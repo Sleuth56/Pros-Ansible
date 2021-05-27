@@ -1,1 +1,24 @@
-# - name: Installing the arm tool chain
+- name: Download X86 arm tool chain.
+  get_url:
+      url: https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-{{ version }}-x86_64-linux.tar.bz2
+      dest: /tmp/arm-none-eabi
+      checksum: md5:8312c4c91799885f222f663fc81f9a31
+  when: ansible_architecture == "x86_64"
+
+- name: Download aarch64 arm tool chain.
+  get_url:
+    url: https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-{{ version }}-aarch64-linux.tar.bz2
+    dest: /tmp/arm-none-eabi
+    checksum: md5:1c3b8944c026d50362eef1f01f329a8e
+  when: ansible_architecture == "aarch64"
+
+- name: Untar arm tool chain.
+  ansible.builtin.unarchive:
+    src: /tmp/arm-none-eabi
+    dest: /usr/local/bin
+
+- name: Add bash path.
+  lineinfile:
+    path: /etc/bash.bashrc
+    line: export PATH=$PATH:/usr/local/bin/gcc-arm-none-eabi-{{ version }}/bin/
+    create: yes

@@ -1,0 +1,3 @@
+- name: Install Pros-cli.
+  pip:
+    name: pros-cli

@@ -1,23 +1,21 @@
 ---
 - hosts: localhost
   connection: local
+  become: true
   remote_user: root
+  vars:
+      version: "10-2020-q4-major"
 
   tasks:
+  - name: Install OS dependencies.
+    include: "{{ lookup('first_found', findme) }}"
+    vars:
+      findme:
+        - Operating_Systems/{{ ansible_os_family }}.packagenames.yml
+        - Operating_Systems/default.packagenames.yml
 
-  - name: read vars
-    include_vars: '{{ item }}'
-    with_first_found:
-      - files:
-          # "ansible_distribution" may be: "Debian", "SLES", "Ubuntu", "CentOS"
-          # "ansible_distribution_version" may be: "9.0", "12.2", "16.04", "7.3.1611"
-          # "ansible_distribution_major_version" may be: "9", "12", 16.04"
-          # "ansible_os_family" may be: "Debian", "RedHat", "Suse"
-          # Upper/lower case is important
-          - "Operatin_Systems/{{ ansible_os_family }}.yml"
+  - name: Install arm tool chain.
+    include: Pros/Arm-tool-chain.yml
 
-          - "Operatin_Systems/default.yml"
-
-  # - name: Pros specific installation.
-  #   include: Pros/Arm-tool-chain.yml
-  #   include: Pros/Pros-cli.yml
+  - name: Install Pros-cli.
+    include: Pros/Pros-cli.yml
