@@ -6,7 +6,9 @@ Install ansible on your computer.
 Instructions taken from [Ansible Install for Debian](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-debian)
 
 Add the following line to `/etc/apt/sources.list`:
+
 `deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main`
+
 ```bash=
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
 sudo apt update
@@ -38,9 +40,7 @@ Logout and back in for the changes to take effect.
 
 ## Testing
 This is the list of all operating systems that have been or needs tested.
-
 If you run on of these operating systems please give this project a go.
-
 If you do please open an issue with your commands and the console output regardless if it worked or not.
 - [ ] Linux
   - [x] Arch
