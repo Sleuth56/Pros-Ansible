@@ -4,7 +4,7 @@
   become: true
   remote_user: root
   vars:
-      armtoolchainurlpart: "https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-"
+      armToolChainUrlPart: "https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-"
       version: "gcc-arm-none-eabi-10-2020-q4-major"
 
   tasks:
