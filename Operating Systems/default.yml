@@ -1,0 +1,6 @@
+- name: Installing General dependencies.
+  package:
+      name:
+        - git
+        - python
+        - python-pip

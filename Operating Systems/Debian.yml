@@ -1,0 +1,6 @@
+- name: Installing Debian based dependencies.
+  package:
+      name:
+        - git
+        - python3
+        - python3-pip
