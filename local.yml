@@ -14,10 +14,9 @@
           # "ansible_distribution_major_version" may be: "9", "12", 16.04"
           # "ansible_os_family" may be: "Debian", "RedHat", "Suse"
           # Upper/lower case is important
-          - "{{ ansible_os_family }}.yml"
+          - "Operatin_Systems/{{ ansible_os_family }}.yml"
 
-          - "default.yml"
-        paths: "./Operatin_Systems/"
+          - "Operatin_Systems/default.yml"
 
   # - name: Pros specific installation.
   #   include: Pros/Arm-tool-chain.yml
