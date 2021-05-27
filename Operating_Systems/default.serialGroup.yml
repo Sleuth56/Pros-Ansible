@@ -1,6 +1,0 @@
-- name: adding existing user "{{ user }}" to group Dialout
-  user:
-    name: "{{ user }}"
-    groups: Dialout
-    append: yes
-  become: yes

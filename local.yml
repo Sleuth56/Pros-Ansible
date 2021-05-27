@@ -24,7 +24,6 @@
     vars:
       OperatingSystems:
         - Operating_Systems/{{ ansible_os_family }}.serialGroup.yml
-        - Operating_Systems/default.serialGroup.yml
 
   - name: Adding upload bash alias
     include: Pros/upload-alias.yml
