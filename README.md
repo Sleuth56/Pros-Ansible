@@ -29,7 +29,9 @@ Instructions taken from [Ansible Install for Fedora](https://docs.ansible.com/an
 `sudo dnf install ansible`
 
 ### Running the playbook
-`sudo ansible-pull -U https://github.com/Sleuth56/Pros-Ansible.git`
+Add `, upload=True` after `user=` if you want the upload alias added.
+`sudo ansible-pull -U https://github.com/Sleuth56/Pros-Ansible.git -e "user="`
+Logout and back in for the changes to take effect.
 
 ## Testing
 This is the list of all operating systems that have been or needs tested.
@@ -47,3 +49,10 @@ Linux is all thats officially supported right now OSX and Windows will be coming
 - [ ] OSX
   - [ ] M1
 - [ ] Windows
+
+
+## Developement
+- Install ansible.
+- `git clone https://github.com/Sleuth56/Pros-Ansible`
+- `cd Pros-Ansible`
+- `sudo ansible-playbook --connection=local local.yml --check -e "user= , upload=True"`
