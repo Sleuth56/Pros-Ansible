@@ -4,6 +4,7 @@ An Ansible script to install pros
 Install ansible on your computer.
 ### Debian
 Instructions taken from [Ansible Install for Debian](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-debian)
+
 Add the following line to `/etc/apt/sources.list`:
 `deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main`
 ```bash=
@@ -30,12 +31,16 @@ Instructions taken from [Ansible Install for Fedora](https://docs.ansible.com/an
 
 ### Running the playbook
 Add `, upload=True` after `user=` if you want the upload alias added.
+
 `sudo ansible-pull -U https://github.com/Sleuth56/Pros-Ansible.git -e "user="`
+
 Logout and back in for the changes to take effect.
 
 ## Testing
 This is the list of all operating systems that have been or needs tested.
+
 If you run on of these operating systems please give this project a go.
+
 If you do please open an issue with your commands and the console output regardless if it worked or not.
 - [ ] Linux
   - [x] Arch
