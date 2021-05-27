@@ -15,10 +15,10 @@
 - name: Untar arm tool chain.
   ansible.builtin.unarchive:
     src: /tmp/arm-none-eabi
-    dest: /usr/local/bin
+    dest: /opt/
 
 - name: Add bash path.
   lineinfile:
     path: /etc/bash.bashrc
-    line: export PATH=$PATH:/usr/local/bin/gcc-arm-none-eabi-{{ version }}/bin/
+    line: export PATH=$PATH:/opt/{{ version }}/bin/
     create: yes
