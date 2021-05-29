@@ -47,7 +47,7 @@ If you do please open an issue with your commands and the console output regardl
   - [ ] Ubuntu
   - [ ] Debian
   - [ ] Gentoo
-  - [ ] Fedora
+  - [x] Fedora 34
   - [ ] Suse
 
 Linux is all thats officially supported right now OSX and Windows will be coming soon.
