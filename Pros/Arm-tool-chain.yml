@@ -23,13 +23,9 @@
     src: /tmp/arm-none-eabi
     dest: /opt/
 
-# - name: Add bash path.
-#   lineinfile:
-#     path: /etc/bash.bashrc
-#     line: export PATH=$PATH:/opt/{{ version }}/bin/
-#     create: yes
-
 - name: Add tool chain bin dir to system-wide $PATH.
   copy:
     dest: /etc/profile.d/custom-path.sh
-    content: 'PATH=$PATH:/opt/{{ version }}/bin/'
+    content: PATH=$PATH:/opt/{{ version }}/bin/
+  become: true
+  remote_user: root
