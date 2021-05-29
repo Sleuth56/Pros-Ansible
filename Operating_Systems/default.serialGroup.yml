@@ -1,0 +1,2 @@
+- debug:
+    msg: We do not have a case for giving your user access to the serial ports automaticly so you will have to do this manually.

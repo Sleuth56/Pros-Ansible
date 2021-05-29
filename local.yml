@@ -6,6 +6,10 @@
       version: "gcc-arm-none-eabi-10-2020-q4-major"
 
   tasks:
+  - name: "Ansible | Print a variable"
+    debug:
+      msg: "The operating system is {{ ansible_os_family }}"
+
   - name: Install OS dependencies.
     include: "{{ lookup('first_found', OperatingSystems) }}"
     vars:
@@ -20,10 +24,12 @@
     include: Pros/Pros-cli.yml
 
   - name: Add user to serial group.
-    include: "{{ lookup('first_found', OperatingSystems, errors='warn') }}"
+    include: "{{ lookup('first_found', OperatingSystems) }}"
     vars:
       OperatingSystems:
         - Operating_Systems/{{ ansible_os_family }}.serialGroup.yml
+        - Operating_Systems/default.serialGroup.yml
 
   - name: Adding upload bash alias
     include: Pros/upload-alias.yml
+    when: upload is defined

@@ -5,4 +5,3 @@
     create: yes
   become: true
   remote_user: root
-  when: upload is defined
