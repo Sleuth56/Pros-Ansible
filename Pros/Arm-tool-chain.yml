@@ -1,3 +1,6 @@
+- debug:
+    msg: "Downloading tool chain from: {{ armToolChainUrlPart }}x86_64-linux.tar.bz2"
+  when: ansible_architecture == "x86_64"
 - name: Download X86 arm tool chain.
   get_url:
       url: "{{ armToolChainUrlPart }}x86_64-linux.tar.bz2"
@@ -5,6 +8,9 @@
       checksum: md5:8312c4c91799885f222f663fc81f9a31
   when: ansible_architecture == "x86_64"
 
+- debug:
+    msg: "Downloading tool chain from: {{ armToolChainUrlPart }}aarch64-linux.tar.bz2"
+  when: ansible_architecture == "aarch64"
 - name: Download aarch64 arm tool chain.
   get_url:
     url: "{{ armToolChainUrlPart }}aarch64-linux.tar.bz2"
@@ -17,8 +23,13 @@
     src: /tmp/arm-none-eabi
     dest: /opt/
 
-- name: Add bash path.
-  lineinfile:
-    path: /etc/bash.bashrc
-    line: export PATH=$PATH:/opt/{{ version }}/bin/
-    create: yes
+# - name: Add bash path.
+#   lineinfile:
+#     path: /etc/bash.bashrc
+#     line: export PATH=$PATH:/opt/{{ version }}/bin/
+#     create: yes
+
+- name: Add tool chain bin dir to system-wide $PATH.
+  copy:
+    dest: /etc/profile.d/custom-path.sh
+    content: 'PATH=$PATH:/opt/{{ version }}/bin/'
