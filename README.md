@@ -60,4 +60,4 @@ Linux is all thats officially supported right now OSX and Windows will be coming
 - Install ansible.
 - `git clone https://github.com/Sleuth56/Pros-Ansible`
 - `cd Pros-Ansible`
-- `sudo ansible-playbook --connection=local local.yml --check -e "user= , upload=True"`
+- `sudo ansible-playbook --connection=local local.yml -e "user= , upload=True" --check`
