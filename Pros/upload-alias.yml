@@ -1,6 +1,6 @@
 - name: Adding upload bash alias
   lineinfile:
-    path: /etc/bash.bashrc
+    path: /home/{{ user }}/.bashrc
     line: alias upload='pros mu --run-after'
     create: yes
   become: true
