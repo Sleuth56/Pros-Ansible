@@ -44,7 +44,7 @@ If you run on of these operating systems please give this project a go.
 If you do please open an issue with your commands and the console output regardless if it worked or not.
 - [ ] Linux
   - [x] Arch
-  - [ ] Ubuntu
+  - [x] Ubuntu 20.04
   - [ ] Debian
   - [ ] Gentoo
   - [x] Fedora 34
